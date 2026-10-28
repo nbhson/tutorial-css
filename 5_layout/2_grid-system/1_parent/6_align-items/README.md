@@ -1,5 +1,10 @@
 # align-items
 
+> **🇻🇳 Tóm tắt:** `align-items` căn nội dung **mọi grid item** theo trục block (dọc) — đối xứng với `justify-items` (ngang). Giá trị: `start`, `end`, `center`, `stretch` (mặc định).
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 Aligns grid items along the block (column) axis (as opposed to justify-items which aligns along the inline (row) axis). This value applies to all grid items inside the container.
 
 Values:

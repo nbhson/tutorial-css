@@ -1,5 +1,10 @@
 # grid-template
 
+> **🇻🇳 Tóm tắt:** `grid-template` là shorthand gộp `grid-template-rows`, `grid-template-columns` và `grid-template-areas` trong một khai báo — dùng khi muốn định nghĩa cả khung lưới explicit một lần.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 A shorthand for setting grid-template-rows, grid-template-columns, and grid-template-areas in a single declaration.
 
 Values:

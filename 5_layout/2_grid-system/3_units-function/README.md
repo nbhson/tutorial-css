@@ -1,5 +1,10 @@
 # Special Units & Functions
 
+> **🇻🇳 Tóm tắt:** Bài tổng hợp đơn vị & hàm của Grid: `fr` (phần không gian còn lại), keywords `min-content`/`max-content`/`auto`, hàm `fit-content()`, `minmax()`, `min()`/`max()`, `repeat()` với `auto-fill`/`auto-fit` — trong đó snippet `repeat(auto-fit, minmax(250px, 1fr))` là "mẹo huyền thoại" tạo card responsive không cần media query. Gồm thêm phần Masonry (thử nghiệm) và Subgrid.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 ## fr units
 
 You’ll likely end up using a lot of fractional units in CSS Grid, like 1fr. They essentially mean “portion of the remaining space”. So a declaration like:

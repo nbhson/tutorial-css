@@ -1,5 +1,10 @@
 # grid-auto-columns & grid-auto-rows
 
+> **🇻🇳 Tóm tắt:** `grid-auto-columns` / `grid-auto-rows` đặt kích thước cho các track **tự sinh** (implicit grid) — xuất hiện khi số item vượt số ô đã định nghĩa, hoặc item được đặt ra ngoài lưới explicit.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 Specifies the size of any auto-generated grid tracks (aka implicit grid tracks). Implicit tracks get created when there are more grid items than cells in the grid or when a grid item is placed outside of the explicit grid. (see The Difference Between Explicit and Implicit Grids)
 
 

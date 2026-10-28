@@ -1,5 +1,10 @@
 # justify-content
 
+> **🇻🇳 Tóm tắt:** `justify-content` căn **cả lưới** theo trục inline (ngang) khi tổng kích thước lưới nhỏ hơn container (ví dụ các cột dùng `px` cứng). Khác `justify-items`: cái này căn item trong ô, cái này căn cả khối lưới trong container.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 Sometimes the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px. In this case you can set the alignment of the grid within the grid container. This property aligns the grid along the inline (row) axis (as opposed to align-content which aligns the grid along the block (column) axis).
 
 Values:

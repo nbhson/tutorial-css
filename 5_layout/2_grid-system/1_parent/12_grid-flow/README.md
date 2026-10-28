@@ -1,5 +1,10 @@
 # grid-auto-flow
 
+> **🇻🇳 Tóm tắt:** `grid-auto-flow` điều khiển thuật toán **auto-placement** — cách Grid tự điền các item chưa được chỉ định vị trí. Giá trị: `row` (mặc định, đi theo hàng), `column` (theo cột), kèm `dense` để "lấp chỗ trống" bằng item nhỏ hơn.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 If you have grid items that you don’t explicitly place on the grid, the auto-placement algorithm kicks in to automatically place the items. This property controls how the auto-placement algorithm works.
 
 Values:

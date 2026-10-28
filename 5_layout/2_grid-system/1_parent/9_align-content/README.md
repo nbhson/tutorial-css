@@ -1,5 +1,10 @@
 # align-content
 
+> **🇻🇳 Tóm tắt:** `align-content` căn **cả lưới** theo trục block (dọc) khi lưới nhỏ hơn container — đối xứng với `justify-content` (ngang). Hỗ trợ thêm các giá trị phân bố: `space-between`, `space-around`, `space-evenly`.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 Sometimes the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px. In this case you can set the alignment of the grid within the grid container. This property aligns the grid along the block (column) axis (as opposed to justify-content which aligns the grid along the inline (row) axis).
 
 Values:

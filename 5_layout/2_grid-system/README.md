@@ -1,5 +1,16 @@
 # Grid
 
+## 🇻🇳 Giới thiệu chương Grid
+
+Chương này chia làm 3 phần — học theo thứ tự:
+
+- [`1_parent/`](./1_parent/) — 13 thuộc tính đặt trên **grid container** (template, gap, căn chỉnh, auto-flow...)
+- [`2_child/`](./2_child/) — 5 thuộc tính đặt trên **grid item** (đặt vị trí theo đường lưới, `grid-area`, self-alignment)
+- [`3_units-function/`](./3_units-function/) — đơn vị `fr`, `minmax()`, `repeat()`, `auto-fit`...
+
+Nhớ nhanh: **align = trục block (dọc), justify = trục inline (ngang)**; hậu tố `-items` căn nội dung item trong ô, `-content` căn cả lưới trong container, `-self` căn một item duy nhất.
+
+
 Bố cục lưới CSS (còn gọi là “Lưới” hoặc “Lưới CSS”), là một hệ thống bố cục dựa trên lưới hai chiều, so với bất kỳ hệ thống bố cục web nào trước đây, thay đổi hoàn toàn cách chúng ta thiết kế giao diện người dùng.
 
 **CSS luôn được sử dụng để bố cục các trang web của chúng ta, nhưng nó chưa bao giờ làm tốt công việc đó.**

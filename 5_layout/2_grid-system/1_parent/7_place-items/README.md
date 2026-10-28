@@ -1,5 +1,10 @@
 # place-items
 
+> **🇻🇳 Tóm tắt:** `place-items` là shorthand của `align-items` (giá trị đầu) + `justify-items` (giá trị thứ hai). `place-items: center` là cách căn giữa "hai chiều" kinh điển trong Grid.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 place-items sets both the align-items and justify-items properties in a single declaration.
 
 Values:

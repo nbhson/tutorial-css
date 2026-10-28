@@ -1,5 +1,10 @@
 # grid
 
+> **🇻🇳 Tóm tắt:** `grid` là shorthand lớn nhất của Grid — gộp tất cả thuộc tính explicit (`grid-template-*`) và implicit (`grid-auto-*`, `grid-auto-flow`). ⚠️ Trong một khai báo `grid` chỉ được dùng nhóm explicit HOẶC implicit, không trộn cả hai.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 A shorthand for setting all of the following properties in a single declaration: grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and grid-auto-flow (Note: You can only specify the explicit or the implicit grid properties in a single grid declaration).
 
 Values:

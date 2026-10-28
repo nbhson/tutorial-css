@@ -1,5 +1,10 @@
 # grid-template-columns & grid-template-rows
 
+> **🇻🇳 Tóm tắt:** `grid-template-columns` / `grid-template-rows` định nghĩa các cột và hàng của lưới — đây là thuộc tính quan trọng nhất của Grid. Dùng `fr` (phần không gian còn lại), `minmax()`, `repeat()`. Ví dụ: `grid-template-columns: 1fr 3fr` tạo 2 cột tỉ lệ 1:3.
+>
+> *Nội dung gốc bên dưới (phần đầu đã dịch tiếng Việt) — tham khảo thêm.*
+
+
 Xác định các cột và hàng của lưới bằng danh sách các giá trị được phân tách bằng dấu cách. 
 
 Các giá trị biểu thị kích thước rãnh và khoảng cách giữa chúng biểu thị đường lưới

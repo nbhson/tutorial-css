@@ -1,4 +1,9 @@
-# grid-template
+# gap
+
+> **🇻🇳 Tóm tắt:** `gap` (cùng `row-gap`, `column-gap`) đặt độ rộng của "rãnh" giữa các hàng/cột trong lưới — tương tự Flexbox, thay thế hoàn toàn margin "hack". Shorthand: `gap: <row-gap> <column-gap>`.
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
 
 Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.
 

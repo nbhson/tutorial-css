@@ -1,5 +1,10 @@
 # justify-self
 
+> **🇻🇳 Tóm tắt:** `justify-self` căn **một grid item** theo trục inline (ngang) trong ô của nó, ghi đè `justify-items` của container. Giá trị: `start`, `end`, `center`, `stretch` (mặc định).
+>
+> *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
+
+
 Aligns a grid item inside a cell along the inline (row) axis (as opposed to align-self which aligns along the block (column) axis). This value applies to a grid item inside a single cell.
 
 Values:
