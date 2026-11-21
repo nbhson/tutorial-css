@@ -1,0 +1,5 @@
+/* KHÔNG nên — ngầm hiểu là :is(.card) div */
+div & { ... }
+
+/* NÊN viết tường minh */
+& div { ... }

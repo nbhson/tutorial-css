@@ -1,8 +1,8 @@
-# Sass @-Rules and Directives 
+# Sass @-Rules and Directives
 
-A list of all the rules and directives used in Sass are given below:
+Mục này là "bản đồ" liệt kê toàn bộ các @-rules và directives của Sass — đọc để biết Sass có những công cụ gì và mỗi công cụ đảm nhận việc nào trước khi đi sâu vào từng cái.
 
-Sass rule Directive 
+Sass rule Directive
 
 | Index | Directive  | Description                                                                                                                                          |
 | ----- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -14,3 +14,6 @@ Sass rule Directive
 | 6     | `@warn`    | This directive is used to get cautionary advice about the problem. It displays the SassScript expression values to the standard error output stream. |
 | 7     | `@error`   | This directive is used to display the SassScript expression value as fatal error.                                                                    |
 
+> **Cách đọc bảng này:** mỗi dòng là một directive với cột `Index` chỉ số thứ tự; đọc từ trên xuống theo hướng "nhập file → điều kiện media → chia sẻ style → debug/lỗi". Muốn biết directive làm gì, nhìn cột Description; nhớ tên thì nhìn cột Directive. Ví von: đây là danh mục dụng cụ trong tủ — `@import` là kho nguyên liệu, `@debug`/`@warn`/`@error` là chuông báo, còn `@extend` là cách dùng chung một công thức.
+
+> **Tóm gọn 1 câu:** @-rules là "bộ điều khiển" của Sass — import file, chia style theo media, dùng chung selector và văng thông báo khi có sự cố.

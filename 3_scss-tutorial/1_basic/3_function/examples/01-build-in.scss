@@ -1,0 +1,16 @@
+$width: 100px;
+$primary-color: #3498db;
+$list: apple, orange, banana;
+
+.element {
+  width: add($width, 50px); // Kết quả là 150px
+}
+
+.button {
+  background-color: lighten($primary-color, 10%); // Sáng lên 10%
+  border-color: darken($primary-color, 10%); // Tối đi 10%
+}
+
+.element {
+  content: nth($list, 2); // Kết quả là orange
+}

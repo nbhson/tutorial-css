@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  /* align-items: stretch;    */ /* mặc định — item kéo dài lấp đầy cross axis */
+  /* align-items: flex-start; */ /* dồn về đầu trục phụ */
+  /* align-items: center;     */ /* căn giữa trục phụ */
+  /* align-items: baseline;   */ /* căn theo đường baseline của chữ */
+  align-items: center;
+}

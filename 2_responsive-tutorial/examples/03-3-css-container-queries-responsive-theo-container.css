@@ -1,0 +1,24 @@
+/* Container báo kích thước cho con */
+.card-wrapper {
+  container-type: inline-size;
+  container-name: wrapper;
+}
+
+/* Component phản ứng với không gian nó có, không phải viewport */
+.card {
+  padding: clamp(0.75rem, 3cqi, 2rem);
+}
+
+@container wrapper (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+  }
+}
+
+@container wrapper (max-width: 399px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+}

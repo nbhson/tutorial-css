@@ -1,0 +1,13 @@
+/* Navbar: logo trái, menu phải */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Phân trang: các nút căn giữa */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}

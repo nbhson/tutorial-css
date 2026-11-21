@@ -7,46 +7,23 @@
 
 Xác định các cột và hàng của lưới bằng danh sách các giá trị được phân tách bằng dấu cách. 
 
+Hãy hình dung lưới như một ô đất chia sân: bạn đứng ngoài vạch ranh từng ô (kích thước rãnh), còn khoảng cách giữa hai vạch liền kề chính là "đường lưới" — đây là thứ các giá trị biểu thị.
+
 Các giá trị biểu thị kích thước rãnh và khoảng cách giữa chúng biểu thị đường lưới
 
 Values:
 - <track-size> – can be a length, a percentage, or a fraction of the free space in the grid using the fr unit (more on this unit over at DigitalOcean)
 - <line-name> – an arbitrary name of your choosing
 
-```scss
-.container {
-  grid-template-columns: ...  ...;
-  /* e.g. 
-      1fr 1fr
-      minmax(10px, 1fr) 3fr
-      repeat(5, 1fr)
-      50px auto 100px 1fr
-  */
-  grid-template-rows: ... ...;
-  /* e.g. 
-      min-content 1fr min-content
-      100px 1fr max-content
-  */
-}
-```
+> 📄 **Code ví dụ:** [`examples/01-grid-template-columns-grid-template-rows.scss`](examples/01-grid-template-columns-grid-template-rows.scss)
 
 ![alt text](https://css-tricks.com/wp-content/uploads/2018/11/template-column-rows-02.svg)
 
 - If your definition contains repeating parts, you can use the repeat() notation to streamline things:
-```scss
-.container {
-  grid-template-columns: repeat(3, 20px [col-start]);
-}
-// same
-.container {
-  grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];
-}
-```
-- The fr unit allows you to set the size of a track as a fraction of the free space of the grid container. 
+> 📄 **Code ví dụ:** [`examples/02-grid-template-columns-grid-template-rows.scss`](examples/02-grid-template-columns-grid-template-rows.scss)
+- The fr unit allows you to set the size of a track as a fraction of the free space of the grid container. Ví von: `fr` như chia phần theo tỷ lệ khi chia bánh — các ô nhận đúng phần "không gian còn lại" theo tỷ lệ bạn ghi.
 
-```scss
-.container {
-  grid-template-columns: 1fr 50px 1fr 1fr;
-}
-```
+> 📄 **Code ví dụ:** [`examples/03-grid-template-columns-grid-template-rows.scss`](examples/03-grid-template-columns-grid-template-rows.scss)
+
+> **Tóm gọn 1 câu:** `grid-template-columns/rows` là bản vẽ chia ô đất của lưới — viết danh sách kích thước, dùng `repeat()` để gộp phần lặp và `fr` để chia tỷ lệ phần còn lại.
 

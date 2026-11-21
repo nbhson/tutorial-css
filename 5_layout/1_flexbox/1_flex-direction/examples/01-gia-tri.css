@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  flex-direction: row;            /* mặc định — items xếp ngang, theo hướng đọc */
+  /* flex-direction: row-reverse; */   /* xếp ngang, ngược phải sang trái */
+  /* flex-direction: column; */        /* xếp dọc, từ trên xuống */
+  /* flex-direction: column-reverse; *//* xếp dọc, từ dưới lên */
+}

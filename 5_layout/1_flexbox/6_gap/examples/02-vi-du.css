@@ -1,0 +1,6 @@
+/* Danh sách tag: cách nhau đều, không cần :last-child { margin-right: 0 } */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;           /* 👍 thay vì .tag + .tag { margin-left: 8px } */
+}

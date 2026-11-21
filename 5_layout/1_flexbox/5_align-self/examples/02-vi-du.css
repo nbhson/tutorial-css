@@ -1,0 +1,9 @@
+/* Card: tiêu đề căn trên, nút "Xem thêm" đẩy xuống đáy card */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .btn {
+  align-self: flex-end;    /* nút nằm góc phải-dưới dù card căn mặc định */
+}

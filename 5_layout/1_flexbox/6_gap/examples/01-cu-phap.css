@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  gap: 1rem;             /* cả hai chiều đều 1rem */
+  /* gap: 1rem 2rem; */  /* row-gap=1rem, column-gap=2rem */
+  /* row-gap: 8px;  */   /* đặt riêng từng chiều */
+  /* column-gap: 16px; */
+}

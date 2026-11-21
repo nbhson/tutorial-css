@@ -1,0 +1,9 @@
+/* Card grid "giả": tự xuống dòng, card tối thiểu 200px */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.cards > .card {
+  flex: 1 1 200px;   /* basis tối thiểu 200px, giãn/co theo không gian */
+}

@@ -1,0 +1,14 @@
+example {
+  border:1px solid #999;
+  width: 100px;
+  height: 100px;
+  padding:5px;
+  color:#fff;
+
+  background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+
+  /* -webkit- */
+  background: -webkit-gradient(linear, left top, left bottom, from(#314bb8), to(#1a3356));
+  /* -moz- */
+  -moz-linear-gradient(start location, start color, end color)
+}

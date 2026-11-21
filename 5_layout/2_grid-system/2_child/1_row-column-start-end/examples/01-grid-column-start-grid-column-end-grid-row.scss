@@ -1,0 +1,6 @@
+.item {
+  grid-column-start: <number> | <name> | span <number> | span <name> | auto;
+  grid-column-end: <number> | <name> | span <number> | span <name> | auto;
+  grid-row-start: <number> | <name> | span <number> | span <name> | auto;
+  grid-row-end: <number> | <name> | span <number> | span <name> | auto;
+}

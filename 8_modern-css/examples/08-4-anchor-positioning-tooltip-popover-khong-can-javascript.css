@@ -1,0 +1,17 @@
+.tooltip {
+  container-type: anchored;
+
+  &::before {
+    content: '▲';        /* mũi tên hướng lên mặc định */
+    position: absolute;
+    bottom: 100%;
+  }
+}
+
+@container anchored(fallback: flip-block) {
+  .tooltip::before {
+    content: '▼';        /* tooltip bị lật lên trên → đổi mũi tên */
+    bottom: auto;
+    top: 100%;
+  }
+}

@@ -1,0 +1,10 @@
+.item {
+  flex-grow: 1;    /* chia phần không gian dư theo tỉ lệ (default: 0 — không giãn) */
+  flex-shrink: 1;  /* cho phép co lại khi không đủ chỗ (default: 1) */
+  flex-basis: 0;   /* kích thước xuất phát trước khi giãn/co (default: auto = theo content) */
+}
+
+/* Shorthand quen thuộc: */
+/* flex: 1            = flex: 1 1 0    — chiếm đều không gian */
+/* flex: auto         = flex: 1 1 auto */
+/* flex: none         = flex: 0 0 auto — kích thước cố định theo content */

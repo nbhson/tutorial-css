@@ -1,0 +1,8 @@
+/* CSS: đặt tên cho phần tử chuyển động */
+.hero-image {
+  view-transition-name: hero;
+}
+
+/* CSS tự animate từ vị trí cũ sang vị trí mới */
+::view-transition-old(hero) { animation: 300ms ease both fade-out; }
+::view-transition-new(hero) { animation: 300ms ease both fade-in; }

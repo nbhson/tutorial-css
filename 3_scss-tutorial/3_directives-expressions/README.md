@@ -1,9 +1,8 @@
 # Control Directives & Expressions
 
-Sass control directives and expressions facilitate you to use styling based on some conditions. It also makes you able to apply same style many times with variations. It is supported by SassScript.
+Vậy làm sao cho stylesheet "biết suy nghĩ"? Control directives & expressions của Sass cho phép style theo điều kiện (if/else) và lặp lại style nhiều lần với biến thể khác nhau — tất cả chạy trên SassScript.
 
-Control directives are the part of compass libraries. These are mainly used in mixin and require considerable flexibility.
-
+Ví von: nếu biến là nguyên liệu thì control directive là công thức nấu có điều kiện — "nếu món mặn thì nêm muối, mỗi vòng khuấy thêm một chút gia vị". Control directives là một phần của thư viện compass, chủ yếu dùng trong mixin và đòi hỏi sự linh hoạt đáng kể.
 
 | Index | Directive                                   | Description                                                                                                                                             |
 | ----- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -16,3 +15,6 @@ Control directives are the part of compass libraries. These are mainly used in m
 | 7     | `@for directive with to keyword`            | In Sass @for directive, the "to" keyword is used to specify the range form value to the value before value.                                             |
 | 8     | `@while directives`                         | It takes SassScript expressions and until the statement evaluates to false it iteratively outputs nested styles.                                        |
 
+> **Cách đọc bảng này:** đọc theo cột Directive để biết có bao nhiêu công cụ rẽ nhánh (`if`, `@if`, `@else if`) và vòng lặp (`@for`, `@each`, `@while`); cột Description mô tả cơ chế từng cái. Hơi hướng đọc: nhóm 1–3 là "ra quyết định", nhóm 4–8 là "lặp có kiểm soát".
+
+> **Tóm gọn 1 câu:** Control directives là "bộ não có điều kiện và vòng lặp" của Sass — style tự rẽ nhánh và lặp theo dữ liệu thay vì chép tay.

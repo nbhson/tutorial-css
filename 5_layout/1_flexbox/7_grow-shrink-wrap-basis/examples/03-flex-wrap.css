@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  flex-wrap: nowrap;  /* mặc định — ép 1 hàng, item bị co */
+  /* flex-wrap: wrap;    cho phép xuống dòng khi hết chỗ */
+  /* flex-wrap: wrap-reverse; xuống dòng ngược hướng */
+}

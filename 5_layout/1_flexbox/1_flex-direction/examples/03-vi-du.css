@@ -1,0 +1,4 @@
+.container {
+  display: flex;
+  flex-direction: column;   /* 3 item xếp chồng dọc thay vì ngang */
+}

@@ -1,0 +1,7 @@
+.container {
+  grid-template-columns: repeat(3, 20px [col-start]);
+}
+// same
+.container {
+  grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];
+}

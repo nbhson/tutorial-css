@@ -6,6 +6,8 @@
 
 ## 🗺️ Bản đồ khóa học
 
+Mục này là bản đồ tổng thể: khóa học gồm những phần nào, mỗi phần khó cỡ nào. Đọc bảng để chọn lộ trình phù hợp với trình độ hiện tại của mình.
+
 Khóa học gồm **8 phần**, sắp xếp theo thứ tự tăng dần độ khó:
 
 | # | Thư mục | Nội dung | Cấp độ |
@@ -18,6 +20,8 @@ Khóa học gồm **8 phần**, sắp xếp theo thứ tự tăng dần độ kh
 | 6 | [`6_animation/`](./6_animation/) | CSS Animations: `@keyframes`, `animation-*`, project "Calm Breeze" | 🌳 Nâng cao |
 | 7 | [`7_transition/`](./7_transition/) | CSS Transitions: `transition-property`, `duration`, `timing-function`, `delay` | 🌳 Nâng cao |
 | 8 | [`8_modern-css/`](./8_modern-css/) | Modern CSS 2025–2026: nesting thuần, `:has()`, container queries, anchor positioning, `oklch()`, view transitions, `@layer`... | 🌳 Nâng cao |
+
+> **Cách đọc bảng này:** đọc theo cột "Cấp độ" để chọn điểm xuất phát — nếu mới bắt đầu thì chỉ cần quan tâm 2 dòng 🌱 đầu tiên, còn các dòng 🌳 là "khu vực nâng cao" nên quay lại sau khi đã đi hết phần cơ bản. Cột "Thư mục" là link bấm thẳng vào bài học.
 
 ## 📖 Thứ tự đọc khuyến nghị
 
@@ -42,7 +46,11 @@ Khóa học gồm **8 phần**, sắp xếp theo thứ tự tăng dần độ kh
 
 ## 📚 Chi tiết từng phần
 
+Mục này mở rộng bản đồ ở trên thành mô tả chi tiết từng phần. Đọc phần nào bạn định học để biết trước nội dung và công sức cần bỏ ra.
+
 ### 1. `1_css-tutorial/` — CSS cơ bản
+
+Mục này nói về phần nền móng: cú pháp, box model, position, và các bài thực hành lớn. Đọc bảng dưới để chọn bài, nhưng khuyên nên đi từ trên xuống — box model ở bài 2 là chân móng của mọi thứ sau này.
 
 Học theo thứ tự thư mục con:
 
@@ -58,6 +66,8 @@ Học theo thứ tự thư mục con:
 | `9_practice-shoppe` | Thực hành clone giao diện Shopee |
 | `10_practice-Luxstay` | Thực hành clone trang Luxstay |
 | `11_cross-browser-code` | Viết CSS tương thích đa trình duyệt |
+
+> **Cách đọc bảng này:** đây là danh mục các thư mục con của phần CSS cơ bản — cột "Bài" là tên thư mục, cột "Nội dung" là những gì bạn sẽ học. Các bài `5-6`, `9`, `10` là bài thực hành, nên làm ngay sau khi xong lý thuyết trước đó.
 
 ### 2. `2_responsive-tutorial/` — Responsive hiện đại
 
@@ -82,7 +92,7 @@ File dài nhất (400+ dòng): native nesting, `:has()`, container queries, anch
 
 ## 🚦 CSS 2026: Trạng thái các tính năng quan trọng
 
-Trạng thái theo [Baseline](https://web.dev/baseline) (web-features / MDN), kiểm tra tháng 10/2026. **"Baseline Widely available"** = dùng an toàn trong production mà không cần polyfill hay build step.
+Mục này là "đèn giao thông" cho việc dùng tính năng mới trong production: cái nào xanh là chạy thẳng, cái nào vàng là phải đi kèm phương án dự phòng. Trạng thái theo [Baseline](https://web.dev/baseline) (web-features / MDN), kiểm tra tháng 10/2026. **"Baseline Widely available"** = dùng an toàn trong production mà không cần polyfill hay build step.
 
 | Tính năng | Trạng thái Baseline | Ghi chú |
 |-----------|--------------------|---------| 
@@ -93,11 +103,17 @@ Trạng thái theo [Baseline](https://web.dev/baseline) (web-features / MDN), ki
 | **Anchor Positioning** | ⚠️ Limited availability | Định vị element bám vào anchor — chưa đạt Baseline, chưa dùng production rộng rãi |
 | **Scroll-driven Animations** (`scroll()`, `view()`) | ⚠️ Limited availability | Chrome/Edge 115+, Safari mới có; Firefox chưa — luôn kèm `@supports` fallback |
 
+> **Cách đọc bảng này:** cột giữa là cột quyết định — ✅ nghĩa là "dùng thẳng, không cần build step", ⚠️ nghĩa là "dùng được nhưng phải kèm phương án dự phòng cho trình duyệt cũ". Cột "Ghi chú" nói ngắn gọn tính năng làm gì; muốn sâu thì bấm theo link trong ghi chú sang phần tương ứng của khóa học.
+
 > 💡 **Quy tắc thực dụng:** những gì ✅ Widely available hãy dùng thẳng, không build step; những gì ⚠️ Limited thì dùng với `@supports (anchor-name: --a) { ... }` và để fallback cho trình duyệt cũ. Trạng thái thay đổi nhanh — tra phiên bản mới nhất tại [web.dev/baseline](https://web.dev/baseline) hoặc MDN.
+
+> **Tóm gọn 1 câu:** Bản đồ khóa học này như tủ sách 8 kệ xếp từ dễ đến khó — đọc theo đèn xanh (Baseline ✅) khi vào production, còn đèn vàng (⚠️) thì luôn mang theo "áo mưa" `@supports`.
 
 ## 🛠️ Cách học trong repo này
 
-- Mỗi bài là một thư mục với `README.md` (lý thuyết) + `index.html` / `styles/` (ví dụ chạy được). Mở file HTML trong trình duyệt để thấy trực quan.
+Mục này giải thích "luật chơi" của repo: mỗi bài có cấu trúc gì, nên đọc file nào trước. Đọc để không bỡ ngỡ khi lồng vào các thư mục con.
+
+- Mỗi bài là một thư mục với `README.md` (lý thuyết) + `index.html` / `styles/` (ví dụ chạy được). Mở file HTML trong trình duyệt để thấy trực quan — ví von: README là sách giáo khoa, còn file HTML là phòng thí nghiệm mở cửa miễn phí.
 - Phần [`5_layout/`](./5_layout/) có đầy đủ ví dụ SCSS (`style.scss`) kèm CSS đã compile — nếu chưa học SCSS, chỉ cần đọc file `.css`.
 - Các phần 1, 2, 8 viết hoàn toàn bằng tiếng Việt; phần `5_layout/` gốc là tài liệu tiếng Anh (web.dev / CSS-Tricks), mỗi bài đã có **phần tóm tắt tiếng Việt ở đầu file**.
 

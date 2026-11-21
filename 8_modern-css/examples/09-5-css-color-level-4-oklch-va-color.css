@@ -1,0 +1,20 @@
+:root {
+  --brand: oklch(60% 0.15 250);   /* L: độ sáng 0-100%, C: độ rực, H: góc màu */
+  --brand-dark: oklch(45% 0.15 250);   /* cùng tông, chỉ giảm sáng */
+  --surface: oklch(98% 0.01 250);
+}
+
+/* color-mix(): pha trộn màu ngay trong CSS */
+.button {
+  background: color-mix(in oklch, var(--brand) 100%, white);
+}
+.button:hover {
+  /* tự sinh màu hover = pha 20% đen — không cần khai thêm biến */
+  background: color-mix(in oklch, var(--brand), black 20%);
+}
+
+/* Tự động tương phản theo theme sáng/tối */
+.card {
+  background: var(--brand);
+  color: color-mix(in oklch, white calc(100% - var(--contrast)), black calc(var(--contrast)));
+}

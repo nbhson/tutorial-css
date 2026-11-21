@@ -1,0 +1,9 @@
+.container {
+  grid-auto-columns: <track-size> ...;
+  grid-auto-rows: <track-size> ...;
+}
+
+// example
+.container {
+  grid-auto-flow: row | column | row dense | column dense;
+}

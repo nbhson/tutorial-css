@@ -1,37 +1,17 @@
 # Sass Function
 
-Dưới đây là cách sử dụng một số hàm SCSS phổ biến:
+Mục này giới thiệu cách dùng hàm trong SCSS — nơi bạn "gọi tên" một đoạn logic đã được đóng gói sẵn, giống như gọi món trong menu thay vì tự nấu từ đầu.
 
 ## Build-in
 
-Hàm `Math`: Sass cung cấp các hàm tính toán cơ bản như `add()`, `subtract()`, `multiply()`, `divide()` để thực hiện các phép tính toán đơn giản.
-```scss
-$width: 100px;
-$primary-color: #3498db;
-$list: apple, orange, banana;
+Hàm `Math`: Sass cung cấp các hàm tính toán cơ bản như `add()`, `subtract()`, `multiply()`, `divide()` để thực hiện các phép tính toán đơn giản. Ví von: đây là "tủ dụng cụ có sẵn" — mở nắp là dùng, không phải tự rèn dụng cụ.
 
-.element {
-  width: add($width, 50px); // Kết quả là 150px
-}
-
-.button {
-  background-color: lighten($primary-color, 10%); // Sáng lên 10%
-  border-color: darken($primary-color, 10%); // Tối đi 10%
-}
-
-.element {
-  content: nth($list, 2); // Kết quả là orange
-}
-```
+> 📄 **Code ví dụ:** [`examples/01-build-in.scss`](examples/01-build-in.scss)
 
 ## Cách define một function bằng @mixin
 
-```scss 
-@mixin border($width, $color) {
-  border: $width solid $color;
-}
+Khi không có hàm dựng sẵn nào vừa ý, bạn tự "đóng khuôn" một hàm riêng bằng `@mixin` — nấu một lần, gọi món mãi về sau.
 
-.element {
-  @include border(2px, #ccc); // Sử dụng mixin border với độ dày 2px và màu xám nhạt
-}
-```
+> 📄 **Code ví dụ:** [`examples/02-cach-define-mot-function-bang-mixin.scss`](examples/02-cach-define-mot-function-bang-mixin.scss)
+
+> **Tóm gọn 1 câu:** Hàm SCSS là "món trong menu": built-in là món nhà bếp có sẵn, `@mixin` là công thức bạn tự tạo ra để gọi đi gọi lại.

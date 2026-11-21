@@ -1,0 +1,20 @@
+/* Trước đây chỉ SCSS làm được, giờ là CSS thuần */
+.card {
+  padding: 1rem;
+  background: white;
+
+  /* & đại diện cho selector cha, giống SCSS */
+  &:hover {
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  }
+
+  & .title {
+    font-size: 1.25rem;
+  }
+
+  /* @media lồng bên trong cũng được */
+  @media (width >= 768px) {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+}

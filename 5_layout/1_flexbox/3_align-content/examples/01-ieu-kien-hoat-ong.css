@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;              /* ⚠️ bắt buộc — không có wrap thì align-content vô hiệu */
+  height: 300px;                /* cần container cao hơn nội dung thì mới "căn" được */
+  align-content: space-between;
+}

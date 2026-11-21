@@ -6,16 +6,9 @@
 
 ## Cú pháp
 
-```css
-.container {
-  display: flex;
-  align-items: center;      /* mọi item căn giữa theo cross axis */
-}
+Mục này giới thiệu `align-self` và tập giá trị nó nhận — giống hệt `align-items`, nhưng áp cho **một item duy nhất**.
 
-.container .item-2 {
-  align-self: flex-end;     /* ...nhưng item 2 dồn xuống cuối */
-}
-```
+> 📄 **Code ví dụ:** [`examples/01-cu-phap.css`](examples/01-cu-phap.css)
 
 | Giá trị | Hiệu ứng |
 |---------|----------|
@@ -25,23 +18,17 @@
 | `stretch` | Giãn lấp đầy trục phụ |
 | `baseline` | Căn theo baseline chữ |
 
+> **Cách đọc bảng này:** mỗi dòng là một giá trị của `align-self`; cách đọc là so với `align-items` — bảng này y hệt, chỉ khác là bạn đặt nó lên **từng item riêng** thay vì cả container. Ví von: nếu `align-items` là đồng phục cả lớp thì `align-self` là việc một học sinh xin mặc khác đồng phục.
+
 ## Ví dụ
 
-```css
-/* Card: tiêu đề căn trên, nút "Xem thêm" đẩy xuống đáy card */
-.card {
-  display: flex;
-  flex-direction: column;
-}
-
-.card .btn {
-  align-self: flex-end;    /* nút nằm góc phải-dưới dù card căn mặc định */
-}
-```
+> 📄 **Code ví dụ:** [`examples/02-vi-du.css`](examples/02-vi-du.css)
 
 > 💡 Trong flexbox không có `justify-self` — muốn đẩy 1 item sang tận cùng theo main axis, dùng `margin-left: auto` hoặc `align-self` khi trục phù hợp. Mở `index.html` để thử.
 
 Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.
+
+> **Tóm gọn 1 câu:** `align-self` là "xin khác đồng phục" — cùng bộ giá trị với `align-items` nhưng chỉ áp cho một item duy nhất.
 
 ## Tài liệu tham khảo
 

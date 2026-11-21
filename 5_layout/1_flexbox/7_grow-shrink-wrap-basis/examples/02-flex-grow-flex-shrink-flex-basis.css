@@ -1,0 +1,7 @@
+/* Sidebar cố định 250px, content chiếm hết phần còn lại */
+.sidebar { flex: 0 0 250px; }
+.content { flex: 1 1 auto; }
+
+/* 2 cột tỉ lệ 2:1 */
+.col-a { flex: 2; }
+.col-b { flex: 1; }

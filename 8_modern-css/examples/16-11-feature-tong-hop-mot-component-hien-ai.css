@@ -1,0 +1,24 @@
+.card-wrapper {
+  container-type: inline-size;
+}
+
+@layer components {
+  .card {
+    display: grid;
+    gap: 0.75rem;
+    padding: clamp(1rem, 3cqi, 2rem);
+    border-radius: 12px;
+    background: color-mix(in oklch, white 92%, var(--brand));
+
+    &:hover { box-shadow: 0 8px 24px oklch(0% 0 0 / 12%); }
+
+    &:has(img) {
+      grid-template-columns: subgrid;
+      grid-template-rows: auto 1fr;
+    }
+
+    @container (min-width: 480px) {
+      grid-template-columns: 180px 1fr;
+    }
+  }
+}

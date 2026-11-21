@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  grid-row: span 3;
+  /* Thừa hưởng đúng 3 hàng của lưới cha: title, body, footer */
+  grid-template-rows: subgrid;
+}
+
+.card h3   { grid-row: 1; }
+.card p    { grid-row: 2; }
+.card button { grid-row: 3; }

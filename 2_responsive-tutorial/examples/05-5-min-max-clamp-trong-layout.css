@@ -1,0 +1,20 @@
+/* Kẹp width trong khoảng, không cần breakpoint */
+.card {
+  width: clamp(280px, 100%, 600px);  /* full nhỏ, tối đa 600px */
+  margin-inline: auto;               /* căn giữa */
+}
+
+/* Dùng min()/max() cho aspect-ratio hoặc grid */
+.hero-image {
+  /* Chiều cao tối thiểu 200px, tối đa 50vh, tự chảy theo width */
+  height: min(50vh, max(200px, 30vw));
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Gap "chảy" giữa 8px và 32px */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(0.5rem, 2vw, 2rem);
+}

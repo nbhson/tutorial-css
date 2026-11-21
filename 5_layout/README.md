@@ -8,6 +8,8 @@
 
 ## Chương 1: Flexbox (`1_flexbox/`)
 
+Mục này là mục lục chương Flexbox: 8 bài học theo thứ tự, mỗi bài một thuộc tính. Đọc bảng để chọn lộ trình — đi từ trên xuống dưới là đường ngắn nhất.
+
 Flexbox sắp xếp các item **dọc theo một trục** (main axis). Học theo thứ tự 8 bài:
 
 | Bài | Thuộc tính | Nội dung chính |
@@ -21,24 +23,22 @@ Flexbox sắp xếp các item **dọc theo một trục** (main axis). Học the
 | [7](./1_flexbox/7_grow-shrink-wrap-basis/) | `flex-grow`, `flex-shrink`, `flex-wrap`, `flex-basis` | Bốn thuộc tính chi phối kích thước và xuống dòng |
 | [8](./1_flexbox/8_order/) | `order` | Đổi thứ tự hiển thị mà không đổi HTML |
 
+> **Cách đọc bảng này:** mỗi dòng là một bài học, cột "Thuộc tính" là thứ bạn sẽ gõ vào CSS, cột "Nội dung chính" là câu trả lời cho câu hỏi "bài đó giải quyết chuyện gì". Bài 1–3 đặt trên container và lấy gốc ở bài 1 (`flex-direction`) — hiểu bài 1 thì bài 2, 3 gần như tự động hiểu.
+
 **Kiến thức nền cần nhớ trước khi vào bài:**
 
-```css
-.container {
-  display: flex;
-  flex-direction: row;   /* main axis = ngang, cross axis = dọc */
-  justify-content: space-between; /* căn theo main axis */
-  align-items: center;            /* căn theo cross axis */
-  gap: 1rem;
-}
-```
+> 📄 **Code ví dụ:** [`examples/01-chuong-1-flexbox-1-flexbox.css`](examples/01-chuong-1-flexbox-1-flexbox.css)
 
-- **Main axis** đi theo `flex-direction`; **cross axis** vuông góc với nó. `justify-*` luôn tác động lên main axis, `align-*` lên cross axis — nắm được điều này là giải thích được 90% hành vi Flexbox.
+- **Main axis** đi theo `flex-direction`; **cross axis** vuông góc với nó. `justify-*` luôn tác động lên main axis, `align-*` lên cross axis — nắm được điều này là giải thích được 90% hành vi Flexbox. Ví von: Flexbox như một hàng ghế ở chờ — mọi người xếp dọc theo một trục chính, còn `justify-*` canh vị trí dọc hàng ghế, `align-*` canh độ cao người ngồi.
 - Mẹo căn giữa cả hai chiều: `display: flex; justify-content: center; align-items: center;`
+
+> **Tóm gọn 1 câu:** Flexbox là hàng ghế một trục — `flex-direction` chọn hướng hàng ghế, `justify` canh dọc theo hàng, `align` canh vuông góc với hàng.
 
 ## Chương 2: CSS Grid (`2_grid-system/`)
 
-Grid định nghĩa lưới **hàng + cột** rồi đặt item vào ô. Tài liệu gốc tổng hợp từ [CSS-Tricks Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
+Mục này dẫn đường vào chương Grid: thuộc tính chia làm 2 nhóm theo nơi đặt (container hay item), cộng thêm một mục đơn vị & hàm. Đọc để biết "thuộc tính này viết lên ai" — đó là chìa khóa của Grid.
+
+Grid định nghĩa lưới **hàng + cột** rồi đặt item vào ô. Tài liệu gốc tổng hợp từ [CSS-Tricks Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/). Ví von: Grid là việc kẻ ô ly lên cả trang giấy trước, rồi xếp từng mảnh ghép vào ô — khác Flexbox là sắp một hàng người vào ghế.
 
 ### `2_grid-system/1_parent/` — thuộc tính đặt trên **container** (13 bài)
 
@@ -58,7 +58,11 @@ Grid định nghĩa lưới **hàng + cột** rồi đặt item vào ô. Tài li
 | [12](./2_grid-system/1_parent/12_grid-flow/) | `grid-auto-flow` | Cách thuật toán auto-placement điền item: `row`, `column`, `dense` |
 | [13](./2_grid-system/1_parent/13_grid/) | `grid` | Shorthand lớn gộp tất cả thuộc tính explicit + implicit |
 
+> **Cách đọc bảng này:** 13 dòng chia theo công năng — bài 1–3 vẽ khung lưới (hàng/cột/vùng), bài 4–7 căn **nội dung item trong ô**, bài 8–10 căn **cả lưới trong container**, bài 11–13 xử lý phần tự sinh và shorthand. Gặp vấn đề cụ thể thì tra theo đúng nhóm ấy thay vì học vẹt từ bài 1 đến bài 13.
+
 ### `2_grid-system/2_child/` — thuộc tính đặt trên **item** (5 bài)
+
+Mục này liệt kê 5 thuộc tính viết **trực tiếp lên item** — tức là mỗi phần tử con tự quyết định chỗ ngồi của mình. Đọc bảng để nắm bộ công cụ "quyền cá nhân" của item.
 
 | Bài | Thuộc tính | Nội dung chính |
 |-----|-----------|----------------|
@@ -68,40 +72,23 @@ Grid định nghĩa lưới **hàng + cột** rồi đặt item vào ô. Tài li
 | [4](./2_grid-system/2_child/4_align-self/) | `align-self` | Căn một item theo trục block trong ô của nó |
 | [5](./2_grid-system/2_child/5_place-self/) | `place-self` | Shorthand `align-self justify-self` |
 
+> **Cách đọc bảng này:** bài 1–2 là "ghế ngồi" (đặt item vào đâu trên lưới), bài 3–5 là "tư thế ngồi" (căn trong ô như thế nào). Nếu chỉ nhớ một điều: 3 bài cuối cùng đều tôn trọng quy tắc **align = dọc, justify = ngang**.
+
 ### `2_grid-system/3_units-function/` — đơn vị & hàm đặc biệt
 
 Đọc bài [3_units-function](./2_grid-system/3_units-function/) để nắm: `fr`, `min-content`/`max-content`/`auto`, `fit-content()`, `minmax()`, `min()`/`max()`, `repeat()` với `auto-fill`/`auto-fit`, và snippet nổi tiếng:
 
-```css
-/* "Responsive không cần media query" — auto-fit co giãn theo không gian */
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-```
+> 📄 **Code ví dụ:** [`examples/02-2-grid-system-3-units-function-on-vi.css`](examples/02-2-grid-system-3-units-function-on-vi.css)
 
 ---
 
 ## Ví dụ tổng hợp: layout dashboard 2 cột với Grid + Flexbox
 
-```css
-/* Container ngoài: Grid chia sidebar + content */
-.page {
-  display: grid;
-  grid-template-columns: 250px 1fr;   /* sidebar cố định, content chiếm phần còn lại */
-  grid-template-areas:
-    "sidebar header"
-    "sidebar main";
-  min-height: 100vh;
-}
+> 📄 **Code ví dụ:** [`examples/03-vi-du-tong-hop-layout-dashboard-2-cot.css`](examples/03-vi-du-tong-hop-layout-dashboard-2-cot.css)
 
-/* Bên trong mỗi card: Flexbox căn nội dung */
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  justify-content: space-between;
-}
-```
+> 💡 **Quy tắc chọn:** cần kiểm soát cả **hàng lẫn cột** (trang, dashboard, gallery) → Grid. Cần phân bố nội dung **trên một trục** (navbar, danh sách nút, card) → Flexbox. Hai công cụ này bổ trợ nhau, không thay thế nhau — giống chăn và gối: không cái nào thay được cái nào, dùng cùng mới ấm.
 
-> 💡 **Quy tắc chọn:** cần kiểm soát cả **hàng lẫn cột** (trang, dashboard, gallery) → Grid. Cần phân bố nội dung **trên một trục** (navbar, danh sách nút, card) → Flexbox. Hai công cụ này bổ trợ nhau, không thay thế nhau.
+> **Tóm gọn 1 câu:** Chọn công cụ theo chiều của bài toán — bài toán 1 chiều dùng Flexbox, bài toán 2 chiều dùng Grid, và layout thật thường dùng cả hai lồng nhau.
 
 ## Tài liệu tham khảo
 

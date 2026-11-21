@@ -1,0 +1,21 @@
+<!-- Ảnh responsive tự chọn src phù hợp với viewport -->
+<img
+  srcset="hero-480.webp 480w,
+          hero-800.webp 800w,
+          hero-1200.webp 1200w"
+  sizes="(max-width: 480px) 100vw,
+         (max-width: 900px) 80vw,
+         1200px"
+  src="hero-800.webp"
+  alt="Hero image"
+  loading="lazy"
+  decoding="async"
+/>
+
+<!-- CSS cho ảnh tự co giãn theo container -->
+.cover-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height); /* fallback */
+  object-fit: cover;
+}

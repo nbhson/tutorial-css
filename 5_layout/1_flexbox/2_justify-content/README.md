@@ -6,18 +6,9 @@
 
 ## Các giá trị thường dùng
 
-```css
-.container {
-  display: flex;
-  /* justify-content: flex-start;   */ /* mặc định — dồn về đầu trục */
-  /* justify-content: center;       */ /* căn giữa cụm item */
-  /* justify-content: flex-end;     */ /* dồn về cuối trục */
-  /* justify-content: space-between;*/ /* khoảng cách đều nhau, mép ngoài = 0 */
-  /* justify-content: space-around; */ /* khoảng đệm mép = 1/2 khoảng giữa */
-  /* justify-content: space-evenly; */ /* mọi khoảng cách bằng nhau, kể cả mép */
-  justify-content: space-between;
-}
-```
+Mục này liệt kê 6 giá trị phổ biến của `justify-content` — đọc để biết cách "dàn hàng" item dọc theo trục chính.
+
+> 📄 **Code ví dụ:** [`examples/01-cac-gia-tri-thuong-dung.css`](examples/01-cac-gia-tri-thuong-dung.css)
 
 | Giá trị | Hiệu ứng |
 |---------|----------|
@@ -28,27 +19,17 @@
 | `space-around` | Mỗi item có "làn" khoảng trống hai bên — mép bằng nửa khoảng giữa |
 | `space-evenly` | Mọi khoảng trống bằng nhau |
 
+> **Cách đọc bảng này:** mỗi dòng là một giá trị, cột "Hiệu ứng" mô tả khoảng trống đi đâu. Hãy hình dung các item như người ngồi trên ghế băng dài: `flex-start` là dồn về một đầu băng, `space-between` là giãn đều bỏ hai đầu trống, `space-around` là ai cũng được "khu vực riêng" hai bên, còn `space-evenly` là khoảng cách đều tăm tắp từ đầu đến cuối.
+
 ## Ví dụ thực tế
 
-```css
-/* Navbar: logo trái, menu phải */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Phân trang: các nút căn giữa */
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-```
+> 📄 **Code ví dụ:** [`examples/02-vi-du-thuc-te.css`](examples/02-vi-du-thuc-te.css)
 
 Mở `index.html` trong thư mục này, đổi từng giá trị trong `styles/style.css` để so sánh trực quan.
 
 Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.
+
+> **Tóm gọn 1 câu:** `justify-content` là cách "dàn người trên ghế băng" — dồn một đầu, căn giữa, hay chia khoảng trống đều nhau tùy giá trị bạn chọn.
 
 ## Tài liệu tham khảo
 

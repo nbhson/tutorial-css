@@ -1,0 +1,12 @@
+/* Phần tử được neo */
+.btn-trigger {
+  anchor-name: --my-button;
+}
+
+/* Phần tử được định vị theo anchor */
+.tooltip {
+  position: absolute;
+  position-anchor: --my-button;
+  position-area: bottom;          /* đặt dưới anchor, căn giữa */
+  position-try-fallbacks: flip-block, flip-inline; /* tự lật nếu chạm mép */
+}

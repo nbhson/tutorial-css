@@ -1,0 +1,14 @@
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.gradient-border {
+  background: linear-gradient(var(--angle), oklch(70% 0.15 250), oklch(70% 0.15 120));
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  to { --angle: 360deg; }   /* không có @property thì dòng này không chạy được */
+}

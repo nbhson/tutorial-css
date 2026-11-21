@@ -1,0 +1,11 @@
+/* Mobile-first: nội dung chính lên trên, sidebar xuống dưới
+   Desktop: đảo lại sidebar sang trái — không cần đổi HTML */
+.main {
+  order: 1;
+}
+.sidebar {
+  order: 2;
+}
+@media (min-width: 768px) {
+  .sidebar { order: -1; }  /* sidebar nhảy lên trước */
+}

@@ -1,0 +1,10 @@
+grid-template-columns:
+  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+/* easier: */
+grid-template-columns:
+  repeat(8, 1fr);
+
+/* especially when: */
+grid-template-columns:
+  repeat(8, minmax(10px, 1fr));

@@ -1,0 +1,7 @@
+/* Navbar: logo + menu + avatar nằm giữa theo chiều cao */
+.navbar {
+  display: flex;
+  justify-content: space-between;  /* ngang: dàn đều */
+  align-items: center;             /* dọc: căn giữa */
+  height: 64px;
+}

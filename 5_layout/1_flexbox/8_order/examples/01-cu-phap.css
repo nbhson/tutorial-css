@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+}
+
+.item-1 { order: 3; }   /* hiện sau */
+.item-2 { order: 1; }   /* hiện trước */
+.item-3 { order: 2; }
+/* Thứ tự hiển thị: item-2, item-3, item-1 */

@@ -1,0 +1,2 @@
+/* "Responsive không cần media query" — auto-fit co giãn theo không gian */
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

@@ -1,0 +1,23 @@
+/* Không dùng */
+margin-left: 16px;
+padding-right: 24px;
+border-left: 2px solid red;
+
+/* Dùng logical properties */
+margin-inline-start: 16px;   /* trái→LTR, phải→RTL */
+padding-inline-end: 24px;     /* phải→LTR, trái→RTL */
+border-inline-start: 2px solid red;
+
+/* gap thay vì margin rải */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 2vw, 1.5rem);  /* spacing tự chảy */
+}
+
+/* writing-mode dọc (cổng truyền thống) */
+.cjk-card {
+  writing-mode: vertical-rl;
+  padding-block: clamp(1rem, 3vb, 3rem);  /* vb = vertical block */
+  margin-inline: clamp(0.5rem, 1vi, 2rem); /* vi = vertical inline */
+}

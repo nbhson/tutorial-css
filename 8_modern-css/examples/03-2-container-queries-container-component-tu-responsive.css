@@ -1,0 +1,20 @@
+/* 1. Khai báo container */
+.card-wrapper {
+  container-type: inline-size;
+  container-name: card;
+}
+
+/* 2. Component bên trong phản ứng theo container, không phải viewport */
+@container card (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@container card (max-width: 399px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+}

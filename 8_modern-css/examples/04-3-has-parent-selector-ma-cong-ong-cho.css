@@ -1,0 +1,20 @@
+/* Card có ảnh → đổi layout */
+.card:has(img) {
+  grid-template-columns: 120px 1fr;
+}
+
+/* Form field đang có lỗi → tô đỏ cả hàng */
+.form-row:has(input:user-invalid) {
+  --color-danger: oklch(55% 0.2 25);
+  border-color: var(--color-danger);
+}
+
+/* Label đi trước input focus */
+label:has(+ input:focus) {
+  color: oklch(55% 0.15 250);
+}
+
+/* Modal đang mở → khóa scroll của body */
+body:has(dialog[open]) {
+  overflow: hidden;
+}

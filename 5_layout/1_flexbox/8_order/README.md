@@ -4,41 +4,30 @@
 >
 > *Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.*
 
+Hãy hình dung hàng đợi ra vào: ai có "số thứ tự" nhỏ hơn thì lên trước, còn ai bằng nhau thì cứ giữ vị trí ban đầu. `order` hoạt động y hệt — bạn không phải dời ai trong hàng HTML, chỉ cấp lại con số để màn hình xếp lại.
+
 ## Cú pháp
 
-```css
-.container {
-  display: flex;
-}
+Mục này nói về cách `order` nhận giá trị số và quy tắc sắp xếp khi các item bằng điểm nhau.
 
-.item-1 { order: 3; }   /* hiện sau */
-.item-2 { order: 1; }   /* hiện trước */
-.item-3 { order: 2; }
-/* Thứ tự hiển thị: item-2, item-3, item-1 */
-```
+> 📄 **Code ví dụ:** [`examples/01-cu-phap.css`](examples/01-cu-phap.css)
 
 | Giá trị | Hiệu ứng |
 |---------|----------|
 | Số nguyên (âm/0/dương) | Sắp theo tăng dần; items cùng `order` giữ thứ tự theo HTML |
 | `0` (mặc định) | Giữ nguyên thứ tự HTML |
 
+> **Cách đọc bảng này:** đọc từ trên xuống theo cột "Giá trị" — dòng đầu là cách cấp số để sắp lại, dòng hai nhắc bạn rằng không làm gì cả thì mọi item đều `0`. Nhớ thêm: điểm bằng nhau → về vị trí cũ theo HTML.
+
 ## Ví dụ
 
-```css
-/* Mobile-first: nội dung chính lên trên, sidebar xuống dưới
-   Desktop: đảo lại sidebar sang trái — không cần đổi HTML */
-.main {
-  order: 1;
-}
-.sidebar {
-  order: 2;
-}
-@media (min-width: 768px) {
-  .sidebar { order: -1; }  /* sidebar nhảy lên trước */
-}
-```
+Mục này đưa tình huống thực tế để bạn thấy `order` "nhích" một item lên/xuống chỉ bằng một dòng CSS.
+
+> 📄 **Code ví dụ:** [`examples/02-vi-du.css`](examples/02-vi-du.css)
 
 > ⚠️ **Cảnh báo accessibility:** đừng dùng `order` để "vá" thứ tự HTML sai. Screen reader và phím Tab đi theo DOM, không theo hình ảnh hiển thị. Thứ tự HTML nên là thứ tự logic; `order` chỉ dùng cho điều chỉnh layout nhỏ. Mở `index.html` để thử.
+
+> **Tóm gọn 1 câu:** `order` như cấp lại số thứ tự trong hàng đợi — màn hình xếp theo điểm, nhưng screen reader và Tab vẫn đi theo hàng thật của HTML.
 
 Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.
 

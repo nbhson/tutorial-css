@@ -1,0 +1,6 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;   /* cả cụm hàng căn giữa theo chiều cao */
+  gap: 1rem;
+}

@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  /* justify-content: flex-start;   */ /* mặc định — dồn về đầu trục */
+  /* justify-content: center;       */ /* căn giữa cụm item */
+  /* justify-content: flex-end;     */ /* dồn về cuối trục */
+  /* justify-content: space-between;*/ /* khoảng cách đều nhau, mép ngoài = 0 */
+  /* justify-content: space-around; */ /* khoảng đệm mép = 1/2 khoảng giữa */
+  /* justify-content: space-evenly; */ /* mọi khoảng cách bằng nhau, kể cả mép */
+  justify-content: space-between;
+}

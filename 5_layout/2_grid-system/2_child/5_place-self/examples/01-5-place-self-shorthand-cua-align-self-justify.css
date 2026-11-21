@@ -1,0 +1,6 @@
+.item {
+  /* place-self: <align-self> <justify-self>; */
+  place-self: center;        /* = align-self: center; justify-self: center; */
+  place-self: start end;     /* dọc: start, ngang: end */
+  place-self: center stretch;
+}

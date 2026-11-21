@@ -4,233 +4,91 @@
 
 ## 1. `clamp()` — giá trị "chảy" giữa min và max
 
-`clamp(min, preferred, max)` trả về giá trị nằm trong khoảng [min, max], dựa trên biểu thức preferred. Thường dùng cho font-size, padding, gap.
+Mục này nói về hàm `clamp()` — công cụ giúp giá trị CSS tự co giãn trong một khoảng cho phép, thay vì phải nhảy bậc theo từng breakpoint.
 
-```css
-/* Font chảy từ 16px (mobile) → 24px (desktop), không có breakpoint */
-h1 {
-  font-size: clamp(1rem, 2.5vw + 0.75rem, 1.5rem);
-  /* min=16px, max=24px, preferred=2.5vw+12px
-     viewport 320px → ~20px, viewport 1200px → 24px */
-}
+`clamp(min, preferred, max)` trả về giá trị nằm trong khoảng [min, max], dựa trên biểu thức preferred. Thường dùng cho font-size, padding, gap. Ví von: giống như vòi nước có van giới hạn — dòng chảy (kích thước) tự điều chỉnh theo áp lực, nhưng không bao giờ nhỏ hơn van dưới hay tràn qua van trên.
 
-/* Padding tự điều chỉnh */
-.card {
-  padding: clamp(1rem, 4vw, 3rem);
-  /* 320px→16px, 768px→31px, 1200px→48px */
-}
-
-/* Border-radius tự scale */
-.btn {
-  border-radius: clamp(4px, 1.5vw, 16px);
-}
-```
+> 📄 **Code ví dụ:** [`examples/01-1-clamp-gia-tri-chay-giua-min-va.css`](examples/01-1-clamp-gia-tri-chay-giua-min-va.css)
 
 Xem thêm: [MDN – clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp).
 
+> **Tóm gọn 1 câu:** `clamp(min, ideal, max)` là "van điều tiết" — giá trị chảy mượt theo màn hình nhưng không bao giờ lọt ra ngoài hai giới hạn.
+
 ## 2. Fluid Typography — typography không cần breakpoint
 
-Thay vì liệt kê font-size cho từng breakpoint, dùng `clamp()` với đơn vị `vw` để type "chảy" mượt giữa các kích thước:
+Mục này áp dụng `clamp()` vào đúng việc lặt vặt nhất nhưng hay gặp nhất: cho cỡ chữ tự lớn nhỏ theo màn hình mà không liệt kê từng breakpoint.
 
-```css
-/* Tỷ lệ type: Major Third (1.25) */
-:root {
-  --text-xs:   clamp(0.64rem,  1.5vw + 0.4rem,  0.8rem);
-  --text-sm:   clamp(0.8rem,   1.5vw + 0.5rem,  1rem);
-  --text-base: clamp(1rem,     1.5vw + 0.6rem,  1.25rem);
-  --text-lg:   clamp(1.25rem,  2vw + 0.7rem,     1.563rem);
-  --text-xl:   clamp(1.563rem, 2.5vw + 0.8rem,   1.953rem);
-  --text-2xl:  clamp(1.953rem, 3vw + 1rem,       2.441rem);
-  --text-3xl:  clamp(2.441rem, 4vw + 1.2rem,      3.052rem);
-}
+Thay vì liệt kê font-size cho từng breakpoint, dùng `clamp()` với đơn vị `vw` để type "chảy" mượt giữa các kích thước — giống như chữ viết tự co giãn theo khung ảnh thay vì phải cắt lại từng kích thước:
 
-body  { font-size: var(--text-base); line-height: 1.6; }
-h1    { font-size: var(--text-3xl); line-height: 1.1; }
-h2    { font-size: var(--text-2xl); line-height: 1.2; }
-```
+> 📄 **Code ví dụ:** [`examples/02-2-fluid-typography-typography-khong-can-breakpoint.css`](examples/02-2-fluid-typography-typography-khong-can-breakpoint.css)
 
 Công cụ hỗ trợ tính slope/intercept: <https://utopia.fity.club> giúp generate scale tùy ý.
 
+> **Tóm gọn 1 câu:** Fluid typography là "chữ có độ co giãn" — một dòng `clamp()` thay cho cả bảng breakpoint.
+
 ## 3. CSS Container Queries — responsive theo container
 
-`clamp()` + container queries là bộ đôi responsive hiện đại. Container queries trả lời câu hỏi: "component này có bao nhiêu chỗ?" thay vì "viewport rộng bao nhiêu?".
+Mục này nói về container queries — bước ngoặt giúp component tự biết cách "ở đoan trang" tùy chỗ nó được đặt, thay vì phải dò xem viewport rộng bao nhiêu.
 
-```css
-/* Container báo kích thước cho con */
-.card-wrapper {
-  container-type: inline-size;
-  container-name: wrapper;
-}
+`clamp()` + container queries là bộ đôi responsive hiện đại. Container queries trả lời câu hỏi: "component này có bao nhiêu chỗ?" thay vì "viewport rộng bao nhiêu?". Ví von: cùng một người nhân viên, làm việc gọn gàng hay bày biện rộng rãi tùy vào kích thước bàn làm việc được giao — chứ không phải tùy cả sảnh công ty.
 
-/* Component phản ứng với không gian nó có, không phải viewport */
-.card {
-  padding: clamp(0.75rem, 3cqi, 2rem);
-}
-
-@container wrapper (min-width: 400px) {
-  .card {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-  }
-}
-
-@container wrapper (max-width: 399px) {
-  .card {
-    display: flex;
-    flex-direction: column;
-  }
-}
-```
+> 📄 **Code ví dụ:** [`examples/03-3-css-container-queries-responsive-theo-container.css`](examples/03-3-css-container-queries-responsive-theo-container.css)
 
 Xem thêm: [MDN – Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment).
 
+> **Tóm gọn 1 câu:** Container queries cho component "nhìn quanh chỗ ngồi của mình" — cùng một card, rộng thì bày đầy, chật thì xếp gọn.
+
 ## 4. Logical Properties — layout đa hướng (LTR/RTL, vertical writing)
 
-Dùng `inline-start`/`inline-end`, `block-start`/`block-end` thay cho `left`/`right`, `top`/`bottom`. Code tự động đúng hướng với RTL (Arabic, Hebrew).
+Mục này nói về logical properties — cách viết "trái/phải" thành "đầu dòng/cuối dòng" để layout tự lật đúng hướng khi ngôn ngữ đọc ngược chiều.
 
-```css
-/* Không dùng */
-margin-left: 16px;
-padding-right: 24px;
-border-left: 2px solid red;
+Dùng `inline-start`/`inline-end`, `block-start`/`block-end` thay cho `left`/`right`, `top`/`bottom`. Code tự động đúng hướng với RTL (Arabic, Hebrew). Ví von: thay vì chỉ dẫn "rẽ trái", bạn ghi "rẽ theo hướng đọc" — ai đọc từ phải sang trái cũng tự hiểu đúng.
 
-/* Dùng logical properties */
-margin-inline-start: 16px;   /* trái→LTR, phải→RTL */
-padding-inline-end: 24px;     /* phải→LTR, trái→RTL */
-border-inline-start: 2px solid red;
-
-/* gap thay vì margin rải */
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(0.5rem, 2vw, 1.5rem);  /* spacing tự chảy */
-}
-
-/* writing-mode dọc (cổng truyền thống) */
-.cjk-card {
-  writing-mode: vertical-rl;
-  padding-block: clamp(1rem, 3vb, 3rem);  /* vb = vertical block */
-  margin-inline: clamp(0.5rem, 1vi, 2rem); /* vi = vertical inline */
-}
-```
+> 📄 **Code ví dụ:** [`examples/04-4-logical-properties-layout-a-huong-ltr-rtl.css`](examples/04-4-logical-properties-layout-a-huong-ltr-rtl.css)
 
 Xem thêm: [MDN – Logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values).
 
+> **Tóm gọn 1 câu:** Logical properties là "chỉ đường theo hướng đọc" — một bản CSS chạy đúng cả trang đọc xuôi lẫn đọc ngược.
+
 ## 5. `min()`, `max()`, `clamp()` trong layout
 
-```css
-/* Kẹp width trong khoảng, không cần breakpoint */
-.card {
-  width: clamp(280px, 100%, 600px);  /* full nhỏ, tối đa 600px */
-  margin-inline: auto;               /* căn giữa */
-}
+Mục này nói về bộ ba hàm `min()`/`max()`/`clamp()` dùng ngoài typography — áp vào width, gap để layout tự chọn kích thước hợp lý nhất.
 
-/* Dùng min()/max() cho aspect-ratio hoặc grid */
-.hero-image {
-  /* Chiều cao tối thiểu 200px, tối đa 50vh, tự chảy theo width */
-  height: min(50vh, max(200px, 30vw));
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
+> 📄 **Code ví dụ:** [`examples/05-5-min-max-clamp-trong-layout.css`](examples/05-5-min-max-clamp-trong-layout.css)
 
-/* Gap "chảy" giữa 8px và 32px */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(0.5rem, 2vw, 2rem);
-}
-```
+> **Tóm gọn 1 câu:** `min()`/`max()`/`clamp()` là "ban giám khảo" chọn giá trị — CSS tự quyết số cuối cùng giữa nhiều phương án bạn đưa ra.
 
 ## 6. Responsive dựa trên container query units
 
-```css
-/* cqi = 1% inline size của nearest container */
-.card-title {
-  font-size: clamp(1rem, 4cqi, 2rem);
-  /* Chữ tự phóng theo container chứa, không phải viewport */
-}
+Mục này nói về các đơn vị mới (`cqw`, `cqh`...) — đo kích thước theo container thay vì theo viewport.
 
-.card-desc {
-  /* clamp với container units */
-  font-size: clamp(0.875rem, 1.5cqi, 1.125rem);
-  line-height: clamp(1.4, 2cqi, 1.8);
-}
-```
+> 📄 **Code ví dụ:** [`examples/06-6-responsive-dua-tren-container-query-units.css`](examples/06-6-responsive-dua-tren-container-query-units.css)
+
+> **Tóm gọn 1 câu:** Container query units là "thước đo trong phòng" — mọi thứ tính theo container chứa nó, không phải cả tòa nhà (viewport).
 
 ## 7. Responsive images
 
-```html
-<!-- Ảnh responsive tự chọn src phù hợp với viewport -->
-<img
-  srcset="hero-480.webp 480w,
-          hero-800.webp 800w,
-          hero-1200.webp 1200w"
-  sizes="(max-width: 480px) 100vw,
-         (max-width: 900px) 80vw,
-         1200px"
-  src="hero-800.webp"
-  alt="Hero image"
-  loading="lazy"
-  decoding="async"
-/>
+Mục này nói về cách cho ảnh tự chọn kích thước/độ phân giải phù hợp — nhẹ máy cho điện thoại, sắc nét cho màn lớn.
 
-<!-- CSS cho ảnh tự co giãn theo container -->
-.cover-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: attr(width) / attr(height); /* fallback */
-  object-fit: cover;
-}
-```
+> 📄 **Code ví dụ:** [`examples/07-7-responsive-images.html`](examples/07-7-responsive-images.html)
+
+> **Tóm gọn 1 câu:** Responsive images là "giao đúng cỡ áo cho đúng người" — màn nhỏ nhận ảnh nhẹ, màn lớn nhận ảnh nét.
 
 ## 8. Responsive spacing strategy — hệ thống spacing dựa trên clamp
 
-```css
-/* Scale spacing từ mobile → desktop */
-:root {
-  --space-1: clamp(0.25rem, 1vw, 0.75rem);   /* 4→12px */
-  --space-2: clamp(0.5rem,  1.5vw, 1rem);    /* 8→16px */
-  --space-3: clamp(0.75rem, 2vw, 1.5rem);    /* 12→24px */
-  --space-4: clamp(1rem,    2.5vw, 2rem);    /* 16→32px */
-  --space-6: clamp(1.5rem,  3vw, 3rem);      /* 24→48px */
-  --space-8: clamp(2rem,    4vw, 4rem);      /* 32→64px */
-}
+Mục này nói về cách xây hệ thống khoảng cách (spacing) co giãn mượt bằng `clamp()` thay vì định cứng px.
 
-.section { padding: var(--space-6) 0; }
-.card    { padding: var(--space-3); gap: var(--space-2); }
-```
+> 📄 **Code ví dụ:** [`examples/08-8-responsive-spacing-strategy-he-thong-spacing-dua.css`](examples/08-8-responsive-spacing-strategy-he-thong-spacing-dua.css)
+
+> **Tóm gọn 1 câu:** Spacing dựa trên `clamp()` là "lưng ghế tự điều chỉnh" — đệm giữa các thành phần nở ra hoặc thu vào theo màn hình.
 
 ## 9. Responsive pattern: Grid → Stack → Card
 
-```css
-.card-wrapper {
-  container-type: inline-size;
-}
+Mục này nói về một pattern responsive kinh điển: layout xếp dọc khi chật, trải grid khi rộng — dùng chung một cấu trúc HTML.
 
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  padding: var(--space-3);
-}
+> 📄 **Code ví dụ:** [`examples/09-9-responsive-pattern-grid-stack-card.css`](examples/09-9-responsive-pattern-grid-stack-card.css)
 
-/* ≥400px: grid 2 cột, ≥640px: grid 3 cột */
-@container (min-width: 640px) {
-  .card-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1rem, 2vw, 1.5rem);
-  }
-}
-
-@container (min-width: 400px) and (max-width: 639px) {
-  .card-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-2);
-  }
-}
-```
+> **Tóm gọn 1 câu:** Pattern Grid → Stack → Card là "đội hình co giãn" — chỗ hẹp xếp hàng dọc, chỗ rộng dàn thành lưới, HTML không đổi.
 
 ## Tài liệu tham khảo
 

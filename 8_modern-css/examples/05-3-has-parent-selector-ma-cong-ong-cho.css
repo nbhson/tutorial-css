@@ -1,0 +1,8 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+/* Khi ở hàng cuối thiếu 1 item, kéo dài item áp chót */
+.grid:has(.item:nth-last-child(2):nth-child(odd)) .item:last-child {
+  grid-column: span 2;
+}

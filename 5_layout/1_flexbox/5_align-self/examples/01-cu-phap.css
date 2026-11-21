@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  align-items: center;      /* mọi item căn giữa theo cross axis */
+}
+
+.container .item-2 {
+  align-self: flex-end;     /* ...nhưng item 2 dồn xuống cuối */
+}

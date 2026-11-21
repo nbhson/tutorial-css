@@ -6,26 +6,13 @@
 
 ## Cú pháp
 
-```css
-.container {
-  display: flex;
-  gap: 1rem;             /* cả hai chiều đều 1rem */
-  /* gap: 1rem 2rem; */  /* row-gap=1rem, column-gap=2rem */
-  /* row-gap: 8px;  */   /* đặt riêng từng chiều */
-  /* column-gap: 16px; */
-}
-```
+Mục này nói về cách khai báo `gap` — một giá trị duy nhất hoặc tách riêng hàng/cột.
+
+> 📄 **Code ví dụ:** [`examples/01-cu-phap.css`](examples/01-cu-phap.css)
 
 ## Ví dụ
 
-```css
-/* Danh sách tag: cách nhau đều, không cần :last-child { margin-right: 0 } */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;           /* 👍 thay vì .tag + .tag { margin-left: 8px } */
-}
-```
+> 📄 **Code ví dụ:** [`examples/02-vi-du.css`](examples/02-vi-du.css)
 
 | So sánh | `margin` | `gap` |
 |---------|----------|-------|
@@ -33,9 +20,13 @@
 | Down-dòng (wrap) | Phải tính lại margin trên/dưới | Tự động áp cho cả hàng mới |
 | Grid | Không áp dụng được cho track | Tác động trực tiếp lên track |
 
+> **Cách đọc bảng này:** mỗi dòng là một tình huống thường gặp, so trực tiếp cách `margin` và `gap` xử lý. Hãy hình dung `gap` như khe hở giữa các viên gạch do người thợ (trình duyệt) tự chừa — bạn chỉ định độ rộng khe, và khe chỉ xuất hiện **giữa** các viên, không bao giờ tràn ra rìa tường như khi cố dùng margin.
+
 > 💡 `gap` hoạt động cho cả Flexbox và Grid (khác cũ — thời đầu chỉ Grid mới hỗ trợ). Mở `index.html` kèm `styles/` để xem.
 
 Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.
+
+> **Tóm gọn 1 câu:** `gap` là "khe gạch do thợ tự chừa" — khoảng trống chỉ nằm giữa các item, không bao giờ thừa ra mép như margin hack.
 
 ## Tài liệu tham khảo
 

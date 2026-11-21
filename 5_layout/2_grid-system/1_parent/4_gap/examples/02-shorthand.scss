@@ -1,0 +1,14 @@
+.container {
+ /* standard */
+  gap: <grid-row-gap> <grid-column-gap>;
+
+  /* old */
+  grid-gap: <grid-row-gap> <grid-column-gap>;
+}
+
+// example
+.container {
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px; 
+  gap: 15px 10px;
+}

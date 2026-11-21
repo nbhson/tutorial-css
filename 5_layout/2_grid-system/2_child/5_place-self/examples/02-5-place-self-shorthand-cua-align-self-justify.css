@@ -1,0 +1,7 @@
+/* Kinh điển: căn giữa tuyệt đối một item trong ô grid */
+.wrapper {
+  display: grid;
+  place-items: center;   /* trên container */
+}
+/* hoặc trên item: */
+.item { place-self: center; }

@@ -6,16 +6,9 @@
 
 ## Các giá trị
 
-```css
-.container {
-  display: flex;
-  /* align-items: stretch;    */ /* mặc định — item kéo dài lấp đầy cross axis */
-  /* align-items: flex-start; */ /* dồn về đầu trục phụ */
-  /* align-items: center;     */ /* căn giữa trục phụ */
-  /* align-items: baseline;   */ /* căn theo đường baseline của chữ */
-  align-items: center;
-}
-```
+Mục này liệt kê 5 giá trị của `align-items` — đọc để chọn cách căn dọc (cross axis) phù hợp, trong đó `center` là "cú kinh điển" nhất.
+
+> 📄 **Code ví dụ:** [`examples/01-cac-gia-tri.css`](examples/01-cac-gia-tri.css)
 
 | Giá trị | Hiệu ứng (với `flex-direction: row`) |
 |---------|--------------------------------------|
@@ -25,21 +18,17 @@
 | `center` | **Căn giữa dọc** — dùng nhiều nhất |
 | `baseline` | Căn theo baseline của dòng chữ trong từng item |
 
+> **Cách đọc bảng này:** mỗi dòng là một giá trị; cột "Hiệu ứng" ghi theo giả định trục chính là ngang (`row`). Hãy hình dung `align-items` như cách xếp chữ trong một dòng kẻ vở: `stretch` là chữ cao lấp kín dòng, `center` là chữ đứng giữa dòng kẻ, còn `baseline` là đáy các chữ cùng nằm trên một đường kẻ.
+
 ## Ví dụ
 
-```css
-/* Navbar: logo + menu + avatar nằm giữa theo chiều cao */
-.navbar {
-  display: flex;
-  justify-content: space-between;  /* ngang: dàn đều */
-  align-items: center;             /* dọc: căn giữa */
-  height: 64px;
-}
-```
+> 📄 **Code ví dụ:** [`examples/02-vi-du.css`](examples/02-vi-du.css)
 
 > 💡 Lưu ý: item có `height`/`align-self` riêng sẽ không bị `stretch` chi phối. Muốn căn riêng cho 1 item, dùng [`align-self`](../5_align-self/). Mở `index.html` để thử từng giá trị.
 
 Nội dung gốc tiếng Anh bên dưới — tham khảo thêm.
+
+> **Tóm gọn 1 câu:** `align-items` là "đường kẻ ngang của trang vở" — quyết định từng item đứng giữa dòng, dồn lên hay giãn lấp đầy theo trục phụ.
 
 ## Tài liệu tham khảo
 

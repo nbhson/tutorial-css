@@ -1,0 +1,17 @@
+/* Thứ tự khai báo quyết định độ ưu tiên: layer sau > layer trước */
+@layer reset, base, components, utilities;
+
+@layer reset {
+  * { margin: 0; box-sizing: border-box; }
+}
+
+@layer base {
+  a { color: oklch(55% 0.15 250); }
+}
+
+@layer components {
+  /* Ghi đè được style của framework mà không cần !important */
+  .btn { border-radius: 999px; }
+}
+
+/* CSS bên ngoài mọi layer luôn mạnh hơn CSS trong layer */
